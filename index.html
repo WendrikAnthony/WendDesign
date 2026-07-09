@@ -611,7 +611,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--space-5);
-      align-items: start;
+      align-items: stretch;
     }
     .pricing-card {
       background: var(--surface);
@@ -628,8 +628,20 @@
       box-shadow: var(--shadow);
     }
     .pricing-card.featured {
-      border-color: rgba(249,115,22,0.3);
+      border: 2px solid var(--accent);
       background: linear-gradient(135deg, var(--surface), var(--surface-2));
+    }
+    .pricing-card.featured .featured-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-3);
     }
     .ribbon-corner {
       position: absolute;
@@ -728,6 +740,12 @@
       gap: var(--space-1);
     }
     .pricing-addons .addon-item .check { color: var(--accent); }
+
+    @media (min-width: 769px) {
+      .pricing-card.featured {
+        transform: scale(1.03);
+      }
+    }
 
     /* ===== CASES ===== */
     #casos { position: relative; }
@@ -1593,7 +1611,7 @@
       <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> DNS configurado por nós</span>
       <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> 50% agora, 50% na entrega</span>
       <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Suporte direto no WhatsApp</span>
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> 1 ajuste grátis incluído</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> 7 dias de suporte incluso</span>
       <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg> Você envia o material</span>
       <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L3 14.67V21h6.33l10.06-10.06a5.5 5.5 0 0 0 0-7.78z"/></svg> A gente monta o layout</span>
       <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Revisão e ajuste fino</span>
@@ -1601,7 +1619,7 @@
       <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> DNS configurado por nós</span>
       <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> 50% agora, 50% na entrega</span>
       <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Suporte direto no WhatsApp</span>
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> 1 ajuste grátis incluído</span>
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> 7 dias de suporte incluso</span>
     </div>
   </div>
 
@@ -1667,6 +1685,7 @@
         </div>
 
         <div class="pricing-card featured reveal reveal-d2">
+          <div class="featured-badge">Recomendado</div>
           <div class="ribbon-corner"><span class="ribbon-text">MAIS VENDIDO</span></div>
           <div class="price-label">Plano Autoridade</div>
           <div class="price-value">R$897 <small>à vista</small></div>
@@ -1856,9 +1875,9 @@
         <div class="about-content reveal">
           <span class="section-tag">Sobre</span>
           <h2 class="section-title">Quem está por trás<br>da Wend Design</h2>
-          <p>Meu nome é Wendrik, tenho 20 anos. Comecei no mercado digital como afiliado aos 17 — aprendi na prática como copy, design e tráfego funcionam juntos para vender. Desenvolvi produtos digitais próprios, estudei programação e saí do CLT quando entendi que podia entregar mais trabalhando por conta do que dentro de uma empresa.</p>
-          <p>Hoje faço isso para pequenos negócios que merecem um site que realmente funciona — não um template genérico que qualquer um monta em 10 minutos numa plataforma de arrastar e soltar. Cada site que entrego é escrito, programado e publicado por mim. Do zero. Sem intermediário, sem surpresa no prazo, sem enrolação.</p>
-          <p>A maioria dos freelancers some depois da entrega. Eu não. Cada cliente tem suporte direto no WhatsApp e alterações inclusas no plano — porque site com erro ou parado custa cliente, e isso é problema meu tanto quanto seu.</p>
+<p><strong>Meu nome é Wendrik, tenho 20 anos.</strong> Comecei no mercado digital como afiliado aos 17 — aprendi na prática como copy, design e tráfego funcionam juntos para vender. Desenvolvi produtos digitais próprios, estudei programação e saí do CLT quando entendi que podia entregar mais trabalhando por conta.</p>
+<p><strong>Hoje faço isso para pequenos negócios</strong> que merecem um site que realmente funciona — não um template genérico que qualquer um monta em 10 minutos numa plataforma de arrastar e soltar. Cada site que entrego é escrito, programado e publicado por mim, do zero. Sem intermediário, sem surpresa no prazo, sem enrolação.</p>
+<p><strong>A maioria dos freelancers some depois da entrega. Eu não.</strong> Cada cliente tem suporte direto no WhatsApp e 7 dias de suporte com até 3 ajustes inclusos — porque site com erro ou parado custa cliente, e isso é problema meu tanto quanto seu.</p>
           <ul class="about-skills">
             <li><span class="check">✓</span> Marketing digital</li>
             <li><span class="check">✓</span> Programação web</li>
@@ -1929,7 +1948,7 @@
             <span class="arrow">+</span>
           </button>
           <div class="faq-answer" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p itemprop="text">Sim. O código é seu, sem vínculo. Se precisar de alterações depois de pronto, ofereço duas opções: banco de 2 alterações/mês por R$130/mês ou alteração avulsa por R$70/chamado. Nos planos Essencial e Autoridade, você também tem 1 ajuste simples incluído na entrega.</p>
+            <p itemprop="text">Sim. O código é seu, sem vínculo. Você tem 7 dias após a entrega com até 3 ajustes de conteúdo/texto inclusos, sem custo. Depois desse prazo, ofereço banco de 2 alterações/mês por R$130/mês ou alteração avulsa por R$70/chamado.</p>
           </div>
         </div>
         <div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
