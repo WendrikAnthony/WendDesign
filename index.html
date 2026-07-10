@@ -69,12 +69,12 @@
   <meta name="theme-color" content="#f8f8f8" media="(prefers-color-scheme: light)">
   <meta name="msapplication-TileColor" content="#0a0a0a">
   <!-- VOID-NOTE: img-src está fechado de propósito. Toda imagem usada no site (incluindo Unsplash) deve ser baixada e salva em /img/ antes do deploy. Nunca referenciar URL externa em src="". -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self' 'unsafe-inline'; form-action 'self' https://formspree.io; img-src 'self' data:; connect-src 'self' https://formspree.io;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; form-action 'self' https://formspree.io; img-src 'self' data:; connect-src 'self' https://formspree.io;">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23f97316'/%3E%3Ctext x='50' y='68' font-size='50' font-weight='800' text-anchor='middle' fill='%23fff' font-family='sans-serif'%3EW%3C/text%3E%3C/svg%3E">
 
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Geist-Variable.woff2" crossorigin>
-
-  <!-- GEIST UPDATE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script defer>
     (function(){
@@ -86,14 +86,6 @@
   </script>
 
   <style>
-    /* GEIST UPDATE */
-    @font-face {
-      font-family: 'Geist';
-      src: url('/assets/fonts/Geist-Variable.woff2') format('woff2-variations');
-      font-weight: 100 900;
-      font-display: swap;
-    }
-
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
@@ -115,11 +107,10 @@
       --radius: 14px;
       --radius-sm: 8px;
       --radius-full: 999px;
-      --font-geist: 'Geist', sans-serif;
+      --font-title: 'Playfair Display', serif;
+      --font-body: 'Space Grotesk', 'Inter', sans-serif;
       --shadow: 0 4px 24px rgba(0,0,0,0.3);
       --transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-
-      /* GEIST UPDATE */
 
       --space-1: 4px;
       --space-2: 8px;
@@ -148,16 +139,13 @@
 
     html { scroll-behavior: smooth; }
     body {
-      font-family: var(--font-geist);
+      font-family: var(--font-body);
       background: var(--bg);
       color: var(--text);
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.5;
+      line-height: 1.6;
       overflow-x: hidden;
       transition: background 0.3s, color 0.3s;
     }
-    /* GEIST UPDATE */
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 var(--space-5); }
@@ -182,15 +170,13 @@
       border-radius: 2px;
     }
     .section-title {
-      font-family: var(--font-geist);
-      font-size: clamp(1.8rem, 3vw + 0.5rem, 2.5rem);
-      font-weight: 700;
-      line-height: 1.2;
+      font-family: var(--font-title);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.12;
       margin-bottom: var(--space-3);
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       overflow-wrap: break-word;
     }
-    /* GEIST UPDATE */
     .section-sub {
       color: var(--text-muted);
       font-size: clamp(0.85rem, 2.2vw, 1rem);
@@ -213,7 +199,7 @@
       border: none;
       cursor: pointer;
       transition: var(--transition);
-      font-family: var(--font-geist);
+      font-family: var(--font-body);
     }
     .btn-accent {
       background: var(--accent);
@@ -453,15 +439,13 @@
       50% { opacity: 0.3; transform: scale(0.7); }
     }
     .hero h1 {
-      font-family: var(--font-geist);
-      font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
-      font-weight: 900;
-      line-height: 1.1;
+      font-family: var(--font-title);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.08;
       margin-bottom: var(--space-5);
       letter-spacing: -0.02em;
       overflow-wrap: break-word;
     }
-    /* GEIST UPDATE */
     .hero h1 .accent { color: var(--accent); }
     .hero h1 .outline {
       color: transparent;
@@ -512,7 +496,7 @@
       font-size: clamp(1.3rem, 3vw, 1.6rem);
       color: var(--accent);
       letter-spacing: -0.02em;
-      font-family: var(--font-geist);
+      font-family: var(--font-title);
       overflow-wrap: break-word;
     }
     .hero-stat p {
@@ -955,7 +939,7 @@
       font-size: clamp(2rem, 5vw, 2.5rem);
       color: var(--accent);
       opacity: 0.3;
-      font-family: var(--font-geist);
+      font-family: var(--font-title);
       line-height: 1;
       margin-bottom: calc(-1 * var(--space-2));
     }
@@ -1053,7 +1037,7 @@
     .about-visual .stat-box:hover { border-color: rgba(var(--accent-rgb), 0.2); }
     .about-visual .stat-box:first-child { grid-column: span 2; }
     .about-visual .stat-box h3 {
-      font-family: var(--font-geist);
+      font-family: var(--font-title);
       font-size: clamp(1.5rem, 4vw, 2rem);
       color: var(--accent);
       letter-spacing: -0.02em;
@@ -1095,7 +1079,7 @@
       background: none;
       border: none;
       color: var(--text);
-      font-family: var(--font-geist);
+      font-family: var(--font-body);
       font-size: clamp(0.9rem, 2.2vw, 1rem);
       font-weight: 600;
       cursor: pointer;
@@ -1147,7 +1131,7 @@
       align-items: start;
     }
     .contact-info h3 {
-      font-family: var(--font-geist);
+      font-family: var(--font-title);
       font-size: clamp(1.05rem, 2.5vw, 1.2rem);
       margin-bottom: var(--space-4);
       overflow-wrap: break-word;
@@ -1194,7 +1178,7 @@
       border-radius: var(--radius-sm);
       background: var(--bg);
       color: var(--text);
-      font-family: var(--font-geist);
+      font-family: var(--font-body);
       font-size: clamp(0.8rem, 2.2vw, 0.9rem);
       transition: var(--transition);
       outline: none;
@@ -1231,7 +1215,7 @@
     }
     #cta-final .container { position: relative; z-index: 2; }
     #cta-final h2 {
-      font-family: var(--font-geist);
+      font-family: var(--font-title);
       font-size: clamp(2rem, 5vw, 3.5rem);
       margin-bottom: var(--space-4);
       letter-spacing: -0.02em;
@@ -1387,7 +1371,7 @@
       font-size: clamp(0.7rem, 1.8vw, 0.8rem);
       cursor: pointer;
       transition: var(--transition);
-      font-family: var(--font-geist);
+      font-family: var(--font-body);
     }
     .lgpd-btns .btn-accept { background: var(--accent); color: #fff; }
     .lgpd-btns .btn-accept:hover { background: var(--accent-light); }
@@ -1462,7 +1446,7 @@
     .exit-modal .close-btn:hover { color: var(--text); }
     .exit-modal .icon-big { margin-bottom: var(--space-4); }
     .exit-modal h2 {
-      font-family: var(--font-geist);
+      font-family: var(--font-title);
       font-size: clamp(1.3rem, 3vw, 1.6rem);
       margin-bottom: var(--space-3);
       overflow-wrap: break-word;
