@@ -69,7 +69,8 @@
   <meta name="theme-color" content="#f8f8f8" media="(prefers-color-scheme: light)">
   <meta name="msapplication-TileColor" content="#0a0a0a">
   <!-- VOID-NOTE: img-src está fechado de propósito. Toda imagem usada no site (incluindo Unsplash) deve ser baixada e salva em /img/ antes do deploy. Nunca referenciar URL externa em src="". -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://api.fontshare.com; font-src https://api.fontshare.com; script-src 'self' 'unsafe-inline'; form-action 'self' https://formspree.io; img-src 'self' data:; connect-src 'self' https://formspree.io;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://api.fontshare.com; font-src https://api.fontshare.com https://cdn.fontshare.com; script-src 'self' 'unsafe-inline'; form-action 'self' https://formspree.io; img-src 'self' data:; connect-src 'self' https://formspree.io;">
+  <!-- CSP FONT FIX -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23f97316'/%3E%3Ctext x='50' y='68' font-size='50' font-weight='800' text-anchor='middle' fill='%23fff' font-family='sans-serif'%3EW%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://api.fontshare.com">
