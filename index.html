@@ -151,6 +151,7 @@
     .container { max-width: 1140px; margin: 0 auto; padding: 0 var(--space-5); }
 
     .section { padding: clamp(72px, 10vh, 120px) 0; }
+    .section-compact { padding: 48px 0; }
     .section-tag {
       display: inline-flex;
       align-items: center;
@@ -1484,7 +1485,7 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid, .avulso-grid { grid-template-columns: repeat(2, 1fr); }
       .cases-grid { grid-template-columns: repeat(2, 1fr); }
       .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid { grid-template-columns: 1fr; gap: var(--space-7); }
@@ -1501,7 +1502,7 @@
       .nav-links .theme-toggle { align-self: flex-start; }
 
       .hero-stats { gap: var(--space-5); flex-wrap: wrap; }
-      .services-grid { grid-template-columns: 1fr; }
+      .services-grid, .avulso-grid { grid-template-columns: 1fr; }
       .cases-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .about-skills { grid-template-columns: 1fr; }
@@ -1512,6 +1513,7 @@
       .pricing-card { padding: var(--space-6) var(--space-5); }
       .pricing-card .price-value { font-size: clamp(2.5rem, 6vw, 3rem); }
       .section { padding: 60px 0; }
+      .section-compact { padding: 40px 0; }
       .lgpd-inner { flex-direction: column; text-align: center; }
       .footer-grid { grid-template-columns: 1fr; gap: var(--space-5); }
       .footer-bottom { flex-direction: column; text-align: center; }
@@ -1682,7 +1684,7 @@
   </section>
 
   <!-- ===== PRODUTOS AVULSOS ===== -->
-  <section class="section" id="avulsos" aria-label="Produtos Avulsos" style="padding: 48px 0;">
+  <section class="section section-compact" id="avulsos" aria-label="Produtos Avulsos">
     <div class="container">
       <div class="section-header centre reveal">
         <span class="section-tag">Extras</span>
