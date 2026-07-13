@@ -450,10 +450,12 @@
       overflow-wrap: break-word;
     }
     .hero h1 .accent {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  background: linear-gradient(115deg, #b45309 0%, #f97316 18%, #fde68a 38%, #fff7ed 50%, #fde68a 62%, #f97316 82%, #b45309 100%);
+  background-size: 250% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: metallic-shine 5s ease-in-out infinite;
 }
     .hero h1 .outline {
       color: transparent;
@@ -540,6 +542,12 @@
       white-space: nowrap;
     }
     .trust-marquee .track .icon { color: var(--accent); font-size: 1rem; }
+    @keyframes metallic-shine {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     @keyframes marquee {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -1248,10 +1256,12 @@
       overflow-wrap: break-word;
     }
     .highlight-word {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  background: linear-gradient(115deg, #b45309 0%, #f97316 18%, #fde68a 38%, #fff7ed 50%, #fde68a 62%, #f97316 82%, #b45309 100%);
+  background-size: 250% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: metallic-shine 5s ease-in-out infinite;
 }
     #cta-final p {
       color: var(--text-muted);
@@ -1554,6 +1564,7 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
       .reveal { opacity: 1; transform: none; }
+      .hero h1 .accent, .highlight-word { animation: none; background-position: 50% 50%; }
       .trust-marquee .track { animation: none; }
     }
   </style>
