@@ -103,7 +103,7 @@
       --text-dim: #555;
       --border: rgba(255,255,255,0.06);
       --border-light: rgba(255,255,255,0.1);
-      --glow: rgba(var(--accent-rgb), 0.15);
+      --glow: rgba(var(--accent-rgb), 0.35);
       --radius: 14px;
       --radius-sm: 8px;
       --radius-full: 999px;
@@ -133,7 +133,7 @@
       --border: rgba(0,0,0,0.06);
       --border-light: rgba(0,0,0,0.1);
       --bg-rgb: 248, 248, 248;
-      --glow: rgba(var(--accent-rgb), 0.08);
+      --glow: rgba(var(--accent-rgb), 0.16);
       --shadow: 0 4px 24px rgba(0,0,0,0.06);
     }
 
@@ -401,11 +401,12 @@
     .light .hero-grid { opacity: 0.35; }
     .hero-mark {
       display: block;
-      width: 1px;
-      height: 40px;
-      background: var(--accent);
+      width: 2px;
+      height: 48px;
+      background: linear-gradient(to bottom, transparent, var(--accent-light), var(--accent), transparent);
       margin: 0 auto var(--space-4);
-      opacity: 0.6;
+      opacity: 0.9;
+      box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.5);
     }
     .hero-content {
       max-width: 800px;
@@ -1228,6 +1229,14 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(ellipse at center, var(--glow), transparent 70%);
+      pointer-events: none;
+    }
+    #cta-final::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,0.10) 45%, rgba(255,255,255,0.04) 52%, transparent 68%);
+      mix-blend-mode: overlay;
       pointer-events: none;
     }
     #cta-final .container { position: relative; z-index: 2; }
