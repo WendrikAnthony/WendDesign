@@ -387,17 +387,19 @@
       overflow: hidden;
       padding-top: var(--space-8);
     }
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle, var(--border-light) 1px, transparent 1px);
-      background-size: 28px 28px;
-      -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 30%, #000 40%, transparent 100%);
-      mask-image: radial-gradient(ellipse 60% 50% at 50% 30%, #000 40%, transparent 100%);
-      opacity: 0.5;
-      pointer-events: none;
+    .hero-texture{
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background-image:
+        radial-gradient(ellipse 65% 55% at 25% 15%, rgba(var(--accent-rgb),0.14), transparent 60%),
+        radial-gradient(ellipse 55% 50% at 85% 65%, rgba(var(--accent-rgb),0.08), transparent 65%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.09' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)' opacity='0.5'/%3E%3C/svg%3E");
+      background-size: cover, cover, 340px 340px;
+      mix-blend-mode: overlay;
+      opacity: 0.85;
     }
-    .light .hero-grid { opacity: 0.35; }
+    .light .hero-texture{ opacity:0.45; mix-blend-mode:multiply; }
     .hero-mark {
       display: block;
       width: 2px;
@@ -1592,7 +1594,7 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
-    <div class="hero-grid"></div>
+    <div class="hero-texture"></div>
     <div class="container">
       <div class="hero-content">
         <span class="hero-mark"></span>
